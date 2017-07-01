@@ -49,13 +49,7 @@ class ContactsTableViewController: UITableViewController {
     }
     
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
-    
-    
 
     // MARK: - Table view data source
     
@@ -66,9 +60,7 @@ class ContactsTableViewController: UITableViewController {
         return 1
     }
 
-   
-    
-    
+
     
     //Creates a row for each contact... Uses the count property of the array.
     
@@ -106,19 +98,16 @@ class ContactsTableViewController: UITableViewController {
     
     
     
-    
     //Deleting contacts and re-ordering cells
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.contacts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+           
         }   
     }
     
-  
-
-   
     // Override to support rearranging the table view.
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -126,8 +115,12 @@ class ContactsTableViewController: UITableViewController {
         contacts.insert(contactMoving, at: to.row)
         
     }
- 
-   
+    
+    
+    
+    
+    
+    
     
     //getting rid of the delete symbol 'minus symbol'
     
@@ -138,13 +131,13 @@ class ContactsTableViewController: UITableViewController {
             return .delete
         }
     }
+    
     //getting rid of indentation in row
     
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
     
-
     
     // MARK: - Navigation
     
